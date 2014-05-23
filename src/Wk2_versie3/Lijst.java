@@ -1,7 +1,5 @@
 package Wk2_versie3;
 
-import java.util.*;
-
 public class Lijst 
 {
   private Entry header;
@@ -16,9 +14,10 @@ public class Lijst
   }
 
   // Object vooraan toevoegen
-  public void addFirst( Entry o ) 
+  public void addFirst( Entry header ) 
   {
-    addBefore( o, header.next );
+    
+	  header = new Entry(item, head);
   }
 
   // Object vooraan opvragen
