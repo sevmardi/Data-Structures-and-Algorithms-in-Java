@@ -103,28 +103,8 @@ public class Lijst
   {
     
   }
-  
-  public void push(Entry header)
-  {
-	  
-	  
-  }
-  
-  public Entry pop()
-  {
-	  
-	  
-	  return null;
-	  
-  }
-  
-  public Entry peek()
-  {
-	  
-	  return null;
-	  
-  }
-  
+
+
   // Aantal objecten in de lijst afleveren
   public int size() 
   {
