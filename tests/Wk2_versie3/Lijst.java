@@ -59,7 +59,7 @@ public class Lijst
 	  }
 	  else{
 		  
-		  <Entry> tmp = tmp.next;
+//		  <Entry> tmp = tmp.next;
 	  }
 	  
   }

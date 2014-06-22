@@ -1,3 +1,4 @@
+package Lijst_versie_2;
 
 public interface Iterator 
 {
