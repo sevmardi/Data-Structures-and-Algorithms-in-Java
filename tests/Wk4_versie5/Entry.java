@@ -4,7 +4,7 @@ package Wk4_versie5;
 
 public class Entry
 {
-	private Entry element;
+	 Entry element;
 	public Entry next;
 	public Entry previous;
 

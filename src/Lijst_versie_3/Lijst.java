@@ -1,4 +1,5 @@
-package Wk2_versie3;
+
+import java.util.*;
 
 public class Lijst 
 {
@@ -14,91 +15,38 @@ public class Lijst
   }
 
   // Object vooraan toevoegen
-  public void addFirst( Entry header ) 
+  public void addFirst( Object o ) 
   {
-    
-	  header = new Entry(item, head);
+    addBefore( o, header.next );
   }
 
   // Object vooraan opvragen
-  public Entry getFirst() 
+  public Object getFirst() 
   {
-    
-	  if(header ==null);
-	  return header;
+    throw new UnsupportedOperationException(
+          "Nog niet geimplementeerd" );
   }
 
   // Object vooraan verwijderen
-  
-  public Entry removeFirst() 
-  
+  public Object removeFirst() 
   {
-	  Entry Linkrefrenceremove = header;
-	  if(isEmpty())
-	  {
-		  
-		  header = header.next;
-		  
-	  }
-	  else
-	  {
-		  	  
-		  System.out.println("Empty List");
-	  }
-	  
-	  return Linkrefrenceremove;
+    throw new UnsupportedOperationException(
+          "Nog niet geimplementeerd" );
   }
- 
-  public void addlast(Entry o)
-  {
-	  if(header==null)
-	  {
-		  
-		  addFirst(o);
-		  
-	  }
-	  else{
-		  
-		  <Entry> tmp = tmp.next;
-	  }
-	  
-  }
-  
-  public Entry getLast()
-  {
-  	
-  	return null; // nog ff niet
-  }
-  
-  public Entry removelast()
-  {
-  	
-  	return null; // ff wachten 
-  	
-  	
-  }
+
 
   // Aantal objecten in de lijst afleveren
   public int size() 
   {
     return size;
-    
   }
 
   // De lijst leegmaken
   public void clear() 
   {
-    
+    throw new UnsupportedOperationException(
+          "Nog niet geimplementeerd" );
   }
-  
-
-  public boolean isEmpty()
-	{
-		
-		
-		return header == null;
-		
-	}
 
   // Lever een iterator voor de lijst
   public Iterator iterator() 
@@ -119,20 +67,13 @@ public class Lijst
   private void remove( Entry e ) 
   {
     if( e == header )
-      throw new NoSuchElementException("Kan Entry niet verwijderen: is header" );
+      throw new NoSuchElementException( 
+        "Kan Entry niet verwijderen: is header" );
 
     e.previous.next = e.next;
     e.next.previous = e.previous;
     size--;
   }
-  
-
-
-
-  
-  
-  
-  
 
   // Inwendige klasse LItr
   private class LItr implements Iterator 
@@ -163,13 +104,7 @@ public class Lijst
   } // Einde inwendige klasse LItr
 
 
- 
-  
-  
   // Inwendige klasse Entry
-  
-  
-  
   private class Entry 
   {
     Object element;
