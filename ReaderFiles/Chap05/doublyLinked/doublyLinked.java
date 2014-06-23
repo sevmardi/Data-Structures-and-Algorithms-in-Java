@@ -1,3 +1,4 @@
+package Chap05.doublyLinked;
 // doublyLinked.java
 // demonstrates doubly-linked list
 // to run this program: C>java DoublyLinkedApp
