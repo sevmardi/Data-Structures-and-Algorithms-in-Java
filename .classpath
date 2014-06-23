@@ -5,6 +5,8 @@
 	<classpathentry kind="src" path="WorkshopApplets"/>
 	<classpathentry kind="src" path="WK2"/>
 	<classpathentry kind="src" path="WK3"/>
+	<classpathentry kind="src" path="Wk6-7"/>
+	<classpathentry kind="src" path="Wk4"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
