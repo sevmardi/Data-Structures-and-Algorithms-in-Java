@@ -18,15 +18,15 @@ public class Lijst
 	{
 		return (new LijstIterator());
 	}
-	
+	// moet nog
 	public void addFirst (Object o)
 	{
-        throw new UnsupportedOperationException("Nog niet geimplementeerd" );
+        
 	}
-
+	// moet nog
     public void addLast (Object o)
     {
-        throw new UnsupportedOperationException("Nog niet geimplementeerd" );
+        
     }
 	
 	// inwendige klasse LijstIterator

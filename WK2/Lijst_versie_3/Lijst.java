@@ -21,17 +21,17 @@ public class Lijst
   }
 
   // Object vooraan opvragen
+  //moet nog
   public Object getFirst() 
   {
-    throw new UnsupportedOperationException(
-          "Nog niet geimplementeerd" );
+  
   }
 
   // Object vooraan verwijderen
+  //moet nog
   public Object removeFirst() 
   {
-    throw new UnsupportedOperationException(
-          "Nog niet geimplementeerd" );
+   
   }
 
 
@@ -42,10 +42,10 @@ public class Lijst
   }
 
   // De lijst leegmaken
+  //moet nog
   public void clear() 
   {
-    throw new UnsupportedOperationException(
-          "Nog niet geimplementeerd" );
+  
   }
 
   // Lever een iterator voor de lijst
@@ -63,7 +63,8 @@ public class Lijst
     newEntry.next.previous = newEntry;
     size++;
   }
-
+  
+//moet nog
   private void remove( Entry e ) 
   {
     if( e == header )
