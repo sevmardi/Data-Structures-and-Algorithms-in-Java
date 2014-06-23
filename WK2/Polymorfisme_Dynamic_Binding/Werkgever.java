@@ -1,4 +1,5 @@
 package Polymorfisme_Dynamic_Binding;
+
 public class Werkgever implements Persoon
 {
   private String naam;
