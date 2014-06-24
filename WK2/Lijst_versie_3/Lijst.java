@@ -33,29 +33,44 @@ public class Lijst
   {
    
   }
-
+  public void addlast(Object o)
+  {
+	  
+	  
+  }
+  public Object getLast()
+  {
+	  
+	  
+  }
+  public Object removeLast()
+  {
+	  
+	  
+  }
 
   // Aantal objecten in de lijst afleveren
   public int size() 
   {
     return size;
   }
-
+//-------------------------------------------------------------------------------------------
   // De lijst leegmaken
   //moet nog
   public void clear() 
   {
   
   }
-
+//-------------------------------------------------------------------------------------------
   // Lever een iterator voor de lijst
+  
   public Iterator iterator() 
   {
     return new LItr();
   }
 
   // private methoden
-
+//-------------------------------------------------------------------------------------------
   private void addBefore( Object o, Entry e ) 
   {
     Entry newEntry = new Entry(o, e, e.previous);
@@ -64,7 +79,8 @@ public class Lijst
     size++;
   }
   
-//moet nog
+//-------------------------------------------------------------------------------------------
+  // moet nog 
   private void remove( Entry e ) 
   {
     if( e == header )
@@ -76,27 +92,27 @@ public class Lijst
     size--;
   }
 
-  // Inwendige klasse LItr
+  ///////////////////////////////////////////////////// Inwendige klasse LItr////////////////////////////////////////////
   private class LItr implements Iterator 
   {
     private Entry pos = header;
-
+  //-------------------------------------------------------------------------------------------
     public boolean hasNext() 
     {
       return pos.next != header;
     }
-
+  //-------------------------------------------------------------------------------------------
     public Object next() 
     {
       pos = pos.next;
       return pos.element;
     }
-
+  //-------------------------------------------------------------------------------------------
     public boolean hasPrevious() 
     {
       return pos.previous != header;
     }
-
+    //-------------------------------------------------------------------------------------------
     public Object previous() 
     {
       pos = pos.previous;
@@ -105,10 +121,11 @@ public class Lijst
   } // Einde inwendige klasse LItr
 
 
-  // Inwendige klasse Entry
+  /////////////////////////////////////////// Inwendige klasse Entry////////////////////////////////////////////////
   private class Entry 
   {
     Object element;
+    
     Entry next;
     Entry previous;
 
