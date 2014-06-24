@@ -4,6 +4,8 @@ import java.util.*;
 public class Lijst 
 {
   private Entry header;
+  private Entry first;
+  private Entry last;
   private int size;
 
   // Constructor voor een lege lijst
@@ -13,53 +15,99 @@ public class Lijst
     header.next = header;
     header.previous = header;
   }
-
+  
+//-------------------------------------------------------------------------------------------
   // Object vooraan toevoegen
   public void addFirst( Object o ) 
   {
     addBefore( o, header.next );
   }
 
+//-------------------------------------------------------------------------------------------
   // Object vooraan opvragen
-  //moet nog
+ 
   public Object getFirst() 
   {
-  
+	  if 	(header == null );
+	  return header.element;
   }
 
+//-------------------------------------------------------------------------------------------
   // Object vooraan verwijderen
-  //moet nog
+
   public Object removeFirst() 
   {
-   
+	  Object tmp = getFirst();
+	  header = header.next;
+	  return tmp;
   }
+//-------------------------------------------------------------------------------------------
+  //Inserts a new node to the end of this list.
   public void addlast(Object o)
   {
-	  
-	  
+	  if (header ==null)
+		  addFirst(o);
+	  else
+	  {
+		  Node<Object> tmp = header;
+		  while (tmp.next !=null)
+		  {
+			  
+			  tmp = tmp .next;
+			  
+		  }
+		
+		  tmp.next = new  Node<Object>(o, null);
+	  }
   }
+//-------------------------------------------------------------------------------------------
   public Object getLast()
   {
-	  
+	  if (header ==null)
+	  {
+		  Node<AnyType> tmp = head;
+	      while(tmp.next != null) tmp = tmp.next;
+
+	      return tmp.data;
+		  
+	  }
 	  
   }
+//-------------------------------------------------------------------------------------------
   public Object removeLast()
   {
+	  Entry tmp = last;
 	  
-	  
+	  if (first.next == null)
+	  {
+		  
+		  first = null;
+	  }
+	  else{
+		  
+		  last.previous.next = null;
+		  
+	  }
+	  last = last.previous;
+	  return tmp;
   }
-
+//-------------------------------------------------------------------------------------------
   // Aantal objecten in de lijst afleveren
   public int size() 
   {
     return size;
   }
 //-------------------------------------------------------------------------------------------
+  public boolean isEmptyy() {
+		
+	return header ==null;
+	}
+//-------------------------------------------------------------------------------------------
   // De lijst leegmaken
   //moet nog
   public void clear() 
   {
-  
+	  header = null;
   }
 //-------------------------------------------------------------------------------------------
   // Lever een iterator voor de lijst
@@ -80,7 +128,7 @@ public class Lijst
   }
   
 //-------------------------------------------------------------------------------------------
-  // moet nog 
+  
   private void remove( Entry e ) 
   {
     if( e == header )
