@@ -13,22 +13,45 @@ public class Lijst
         tail = null;
         size = 0;
 	}
-	
+	//----------------------------------------------------------------------------------------
 	public Iterator iterator ()
 	{
 		return (new LijstIterator());
 	}
+	//----------------------------------------------------------------------------------------
 	// moet nog
-	public void addFirst (Object o)
+	public void addFirst (Object dd )
 	{
-        
+		Entry  newLink = new Entry(dd);
+		
+        if(isEmptyy())				// if empty list
+        	tail = newLink;			// newLink <-- tail
+        newLink.next = header; 		// newLink -->old header
+        header = newLink;			// header --> newLink
 	}
-	// moet nog
-    public void addLast (Object o)
-    {
+	//----------------------------------------------------------------------------------------
+	public boolean isEmptyy() {
+		
+		return header ==null;
+	}
+	//----------------------------------------------------------------------------------------
+    public void addLast (Object dd)		// insert at the end of list
+    {	
+        Entry newLink = new Entry(dd);	// make a new object of Entry
+        
+        if (isEmptyy())					// if empty list, 
+        	
+        {					
+        	header = newLink;			//header --> new Link
+        }
+        else
+        {
+        	tail.next = newLink;		// old last --> new link
+        }
+        tail = newLink;					// newLink <-- tail
         
     }
-	
+  //----------------------------------------------------------------------------------------
 	// inwendige klasse LijstIterator
 	private class LijstIterator implements Iterator
 	{
@@ -45,17 +68,18 @@ public class Lijst
 			return (temp.element);
 		}	
 	}
-
-	// inwendige klasse Entry
+	
+	//-----------------------------------------------------inwendige klasse Entry-----------------------------------
+	
 	private class Entry
 	{
-		Object element;
-		Entry next;
+	public Object element;
+	public	Entry next;
 		
-		Entry (Object element, Entry next)
+		public Entry (Object element)
 		{
 			this.element = element;
-			this.next = next;
+			
 		}
 	}
 }
