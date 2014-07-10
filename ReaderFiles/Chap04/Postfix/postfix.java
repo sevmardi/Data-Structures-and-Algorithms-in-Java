@@ -117,7 +117,7 @@ class PostfixApp
          if( input.equals("") )       // quit if [Enter]
             break;
                                       // make a parser
-         ParsePost aParser = new ParsePost(input);
+         ParsePost aParser = new ParsePost(input) ;
          output = aParser.doParse();  // do the evaluation
          System.out.println("Evaluates to " + output);
          }  // end while

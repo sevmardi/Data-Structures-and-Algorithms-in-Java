@@ -6,18 +6,19 @@ public class PostFixCalculator
 {
    private String invoerString;
    int resultaat;
-   
+   //----------------------------------CONSTRUCTOR----------------------
    public PostFixCalculator (String invoer)
    {
      this.invoerString = invoer;
      evaluate();
    }
-
+   //---------------------------------------------------------------------------
+   //GETTER
    public int getResultaat()
    {
      return (resultaat);
    }
-   
+   //-------------------------------------------------------------   
    private void evaluate()
    {
      ListStack mystack = new ListStack();
@@ -33,8 +34,8 @@ public class PostFixCalculator
          ..............  // zie algoritme 
        else
        {
-         int v1 = ....  // poppen en omzetten van een String naar int
-         int v2 = ......// idem
+         int v1 = ....  			// poppen en omzetten van een String naar int
+         int v2 = ......			// idem
          int result = 0;
          switch (eerste)
          {
