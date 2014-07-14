@@ -18,6 +18,7 @@ public class Lijst
   
 //-------------------------------------------------------------------------------------------
   // Object vooraan toevoegen
+  
   public void addFirst( Object o ) 
   {
     addBefore( o, header.next );

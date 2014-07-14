@@ -6,14 +6,15 @@ public class PostFixCalculator
 {
    private String invoerString;
    int resultaat;
+ 
    //----------------------------------CONSTRUCTOR----------------------
    public PostFixCalculator (String invoer)
    {
      this.invoerString = invoer;
      evaluate();
    }
-   //---------------------------------------------------------------------------
-   //GETTER
+   //-----------------------------getter---------------------------------------------
+   
    public int getResultaat()
    {
      return (resultaat);
@@ -23,33 +24,45 @@ public class PostFixCalculator
    {
      ListStack mystack = new ListStack();
      
-     StringTokenizer st = new StringTokenizer(invoerString);
+     StringTokenizer tokens  = new StringTokenizer(invoerString);
+     int operand;
      
-     while (st.hasMoreTokens())
+     while (tokens.hasMoreTokens())
      {
-       String token = st.nextToken();
-       char eerste = 					// het eerste karakter van elk token 
+       String token = tokens.nextToken();
+       char eerste = token.charAt(0);						// het eerste karakter van elk token 
     		   
        if (( eerste >= '0') && (eerste <= '9'))
-         ..............  // zie algoritme 
+       {
+    	   try{
+    		   operand = Integer.parseInt(token);
+    		   mystack.push(new Integer(operand));
+    	   }
+    	   catch(NumberFormatException nfe)
+    	   {
+    		   
+    	   }
+    	   
+       }
        else
        {
-         int v1 = ....  			// poppen en omzetten van een String naar int
-         int v2 = ......			// idem
+         int v1 = (int) mystack.pop();			  					// poppen en omzetten van een String naar int
+         int v2 = 	(int) mystack.pop();								// idem
          int result = 0;
+         
          switch (eerste)
          {
            case '+' : result = v1 + v2; 
                       break;
-           case '*' : result = .......;
+           case '*' : result = v1 *v2;
                       break;
-           case '-' : result = .......;
+           case '-' : result = v1 - v2;
                       break;
          }
-         ....... // wat doe je met het resultaat? zie algoritme
+         																		// wat doe je met het resultaat? zie algoritme
        }
      }
-     resultaat = ......... 	// als alles goed is gegaan resultaat
-   }                       	// poppen en omzetten naar een int
+     resultaat =(int)(mystack.pop()) ;		 	// als alles goed is gegaan resultaat poppen en omzetten naar een int
    
+}
 }
