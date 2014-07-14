@@ -59,10 +59,10 @@ public class PostFixCalculator
            case '-' : result = v1 - v2;
                       break;
          }
-         																		// wat doe je met het resultaat? zie algoritme
-       }
+         mystack.push(result);									// wat doe je met het resultaat? zie algoritme
+       }	
      }
-     resultaat =(int)(mystack.pop()) ;		 	// als alles goed is gegaan resultaat poppen en omzetten naar een int
+     resultaat =(int)(mystack.pop()) ;		 					// als alles goed is gegaan resultaat poppen en omzetten naar een int
    
 }
 }
