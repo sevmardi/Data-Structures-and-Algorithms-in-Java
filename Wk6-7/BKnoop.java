@@ -1,11 +1,13 @@
-public class BKnoop<E> {
+public class BKnoop<E> 
+{
   private BKnoop<E> parent, leftChild, rightChild;
   private E userObject;
   public static final int LEFT = 0;
   public static final int RIGHT = 1;
   
   // Constructors
-  public BKnoop() {
+  public BKnoop() 
+  {
     this( null );
   }
 
@@ -28,23 +30,28 @@ public class BKnoop<E> {
                          "Meer dan 2 kinderen" );
   }
 
-  public E get() {
+  public E get() 
+  {
     return userObject;
   }
 
-  public BKnoop<E> getLeftChild() {
+  public BKnoop<E> getLeftChild() 
+  {
     return leftChild;
   }
 
-  public BKnoop<E> getRightChild() {
+  public BKnoop<E> getRightChild() 
+  {
     return rightChild;
   }
 
-  public BKnoop<E> getParent() {
+  public BKnoop<E> getParent()
+  {
     return parent;
   }
 
-  public void insert( BKnoop<E> newChild, int childIndex ) {
+  public void insert( BKnoop<E> newChild, int childIndex ) 
+  {
     if( isAncestor( newChild ) )
       throw new IllegalArgumentException( 
                 "Nieuw kind is voorouder" );

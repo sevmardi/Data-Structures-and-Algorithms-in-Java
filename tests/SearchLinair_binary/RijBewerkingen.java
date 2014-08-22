@@ -1,18 +1,21 @@
 package SearchLinair_binary;
 
-public class RijBewerkingen {
+public class RijBewerkingen
+{
 	private char[] rij;
 	int foundIndex = -1;
 
 	// constructor
-	public RijBewerkingen(char[] rij) {
+	public RijBewerkingen(char[] rij) 
+	{
 		this.rij = rij;
 	}
 
 	// als target voor komt in de tabel dan wordt de index van target teruggegeven
 	// als target niet voor komt dan wordt -1 teruggegeven.
 
-	public int lineair_zoeken(char target) {
+	public int lineair_zoeken(char target) 
+	{
 
 		for (int i = 0; i < rij.length; i++) {
 			if (rij[i] == target) {
@@ -64,7 +67,8 @@ public class RijBewerkingen {
 	// de tabel wordt in oplopende volgorde gesorteerd
 	// mbv de 'bubble-sort'-methode
 
-	public void bubble() {
+	public void bubble() 
+	{
 		
 		for(int i = 0; i<rij.length; i++)
 		{
@@ -85,7 +89,8 @@ public class RijBewerkingen {
 		
 	}
 
-	public void print() {
+	public void print()
+	{
 		for (int te = 0; te < rij.length; te++)
 			System.out.print(rij[te] + "  ");
 		System.out.println("\n\n\n");
