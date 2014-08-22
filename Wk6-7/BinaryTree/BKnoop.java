@@ -1,6 +1,7 @@
 package BinaryTree;
 public class BKnoop<E> 
 {
+	//https://github.com/MrHus/TuttiFruti/blob/master/src/ida1/trees/BKnoop.java
   private BKnoop<E> parent, leftChild, rightChild;
   private E userObject;
   
