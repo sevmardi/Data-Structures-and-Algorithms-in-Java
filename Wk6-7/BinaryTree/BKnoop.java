@@ -1,7 +1,12 @@
 package BinaryTree;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class BKnoop<E> 
 {
-	//https://github.com/MrHus/TuttiFruti/blob/master/src/ida1/trees/BKnoop.java
+	
   private BKnoop<E> parent, leftChild, rightChild;
   private E userObject;
   
@@ -171,12 +176,162 @@ public class BKnoop<E>
   }
 //************************************************************************************************  
   
-  public String preOrder()
+  public String preOrderString()
   {
+	  StringBuilder buffer = new StringBuilder();
 	  
-	  
-	  
+	  for (E node : preOrder())
+	  {
+		  buffer.append(node);
+		  buffer.append("");
+	  }
+	  return buffer.toString();
   }
 //************************************************************************************************  
   
+  public ArrayList<E> preOrder()
+  {
+	  ArrayList<E> list = new ArrayList<E>();
+	  preOrder(list);
+	  return list;
+  }
+//************************************************************************************************
+  
+  private ArrayList<E> preOrder(ArrayList<E> list)
+  {	  
+	  list.add(userObject);
+	  if(leftChild != null)
+	  {
+		  leftChild.preOrder(list);
+	  }
+	  if(rightChild!=null)
+	  {
+		  rightChild.preOrder(list);
+	  }
+	  return list;
+  }
+//************************************************************************************************
+  public String inOrderString()
+	{
+		StringBuilder buffer = new StringBuilder();
+
+		for (E node : inOrder())
+		{
+			buffer.append(node);
+			buffer.append(" ");
+		}
+
+		return buffer.toString();
+	}
+//************************************************************************************************
+	public ArrayList<E> inOrder()
+	{
+		ArrayList<E> list = new ArrayList<E>();
+		inOrder(list);
+		return list;
+	}
+//************************************************************************************************
+	private ArrayList<E> inOrder(ArrayList<E> list)
+	{
+		if(leftChild != null)
+		{
+			leftChild.inOrder(list);
+		}
+
+		list.add(userObject);
+
+		if(rightChild != null)
+		{
+			rightChild.inOrder(list);
+		}
+
+		return list;
+	}
+//************************************************************************************************
+	
+	public String postOrderString()
+	{
+		StringBuilder buffer = new StringBuilder();
+
+		for (E node : postOrder())
+		{
+			buffer.append(node);
+			buffer.append(" ");
+		}
+
+		return buffer.toString();
+	}
+//************************************************************************************************
+
+	public ArrayList<E> postOrder()
+	{
+		ArrayList<E> list = new ArrayList<E>();
+		postOrder(list);
+		return list;
+	}
+//************************************************************************************************
+	
+	private ArrayList<E> postOrder(ArrayList<E> list)
+	{
+		if(leftChild != null)
+		{
+			leftChild.postOrder();
+		}
+
+		if(rightChild != null)
+		{
+			rightChild.postOrder();
+		}
+		
+		list.add(userObject);
+
+		return list;
+	}
+//************************************************************************************************
+	
+	public String levelOrderString()
+	{
+		StringBuffer buffer = new StringBuffer();
+		
+		for (E node : levelOrder())
+		{
+			buffer.append(node);
+			buffer.append(" ");
+		}
+
+		return buffer.toString();
+	}
+//************************************************************************************************
+	public ArrayList<E> levelOrder()
+	{
+		Queue<BKnoop<E>> queue = new LinkedList<BKnoop<E>>();
+		queue.add(this);
+
+		ArrayList<E> list = new ArrayList<E>();
+		levelOrder(list, queue);
+		return list;
+	}
+//************************************************************************************************
+	private ArrayList<E> levelOrder(ArrayList<E> list, Queue<BKnoop<E>> queue)
+	{
+		while(!queue.isEmpty())
+		{
+			BKnoop<E> knoop = queue.remove();
+
+			list.add(knoop.get());
+
+			if(knoop.leftChild != null)
+			{
+				queue.add(knoop.leftChild);
+			}
+
+			if(knoop.rightChild != null)
+			{
+				queue.add(knoop.rightChild);
+			}
+		}
+
+		return list;
+	}
+//************************************************************************************************
 }
