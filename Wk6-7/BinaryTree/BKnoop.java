@@ -13,7 +13,7 @@ public class BKnoop<E>
   {
     this( null );
   }
-
+//************************************************************************************************ 
   public BKnoop( E userObject )
   {
     parent = null;
@@ -21,7 +21,7 @@ public class BKnoop<E>
     rightChild = null;
     this.userObject = userObject;
   }
-
+//************************************************************************************************ 
   // Methoden
   public void add( BKnoop<E> newChild )
   {
@@ -34,27 +34,27 @@ public class BKnoop<E>
         throw new IllegalArgumentException( 
                          "Meer dan 2 kinderen" );
   }
-
+//************************************************************************************************ 
   public E get() 
   {
     return userObject;
   }
-
+//************************************************************************************************ 
   public BKnoop<E> getLeftChild() 
   {
     return leftChild;
   }
-
+//************************************************************************************************ 
   public BKnoop<E> getRightChild() 
   {
     return rightChild;
   }
-
+//************************************************************************************************ 
   public BKnoop<E> getParent()
   {
     return parent;
   }
-
+//************************************************************************************************ 
   public void insert( BKnoop<E> newChild, int childIndex ) 
   {
     if( isAncestor( newChild ) )
@@ -77,20 +77,22 @@ public class BKnoop<E>
     else
       rightChild = newChild;
   }
-  
-  public boolean isChild( BKnoop<E> aNode ) {
+//************************************************************************************************  
+  public boolean isChild( BKnoop<E> aNode ) 
+  {
     return aNode == null? 
            false :
            aNode.getParent() == this;
   }
-
-  public boolean isAncestor( BKnoop<E> aNode ) {
+//************************************************************************************************ 
+  public boolean isAncestor( BKnoop<E> aNode ) 
+  {
     BKnoop<E> ancestor = this;
     while( ancestor != null && ancestor != aNode )
       ancestor = ancestor.getParent();
     return ancestor != null;
   }
-
+//************************************************************************************************ 
   public void remove( BKnoop<E> aChild ) {
     if( aChild == null )
       throw new IllegalArgumentException(
@@ -100,7 +102,8 @@ public class BKnoop<E>
       throw new IllegalArgumentException(
                 "Argument is geen kind" );
 
-    if( aChild == leftChild ) {
+    if( aChild == leftChild )
+    {
       leftChild.parent = null;
       leftChild = null;
     }
@@ -110,26 +113,70 @@ public class BKnoop<E>
       rightChild = null;
     }
   }
-
+//************************************************************************************************ 
   public String toString() {
     return userObject.toString();
   }
-  
+//************************************************************************************************  
   public int aantalKnopen()
   {
-	  
-	  return 1;
+	  if(leftChild == null && rightChild ==null)
+	  { 
+		  return 1;  
+	  }
+	  if(leftChild != null && rightChild ==null)
+	  {
+		  
+		  return 1 + leftChild.aantalKnopen();
+		  
+	  }
+	  if(leftChild ==null && rightChild!= null)
+	  {
+		  return  1+ rightChild.aantalKnopen();
+	  }
+	  else
+		  return 1+ leftChild.aantalKnopen()+rightChild.aantalKnopen();
+	 
   }
-  
+//************************************************************************************************   
   public int aantalBlad()
   {
+	  if(leftChild!= null && rightChild !=null)
+	  {
+		  return leftChild.aantalBlad()+rightChild.aantalBlad();
+	  }
+	  else
+		  return 1;
 	  
-	  return 1;
   }
+//************************************************************************************************   
   public int diepte()
   {
+	  if(userObject== null)
+	  {
+		  return -1;
+	  }
+	  if(leftChild==null)
+	  {
+		  return 1+rightChild.diepte();
+	  }
+	  if(rightChild==null)
+	  {
+		  return 1+ leftChild.diepte();
+	  }
+
+	  return Math.max(1 + leftChild.diepte(), 1 + rightChild.diepte());
 	  
-	  return 1;
 	  
   }
+//************************************************************************************************  
+  
+  public String preOrder()
+  {
+	  
+	  
+	  
+  }
+//************************************************************************************************  
+  
 }
