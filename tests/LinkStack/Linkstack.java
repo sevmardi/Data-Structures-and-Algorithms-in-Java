@@ -9,10 +9,8 @@ public class Linkstack
 	
 	public Linkstack()
 	{
-		
 		thelist = new Linklist();
-		
-		
+
 	}
 //-----------------------------------------------------------------
 	

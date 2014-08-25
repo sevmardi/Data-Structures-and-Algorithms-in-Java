@@ -38,7 +38,6 @@ public class RijBewerkingen
 
 		while (startindex <= endIndex) 
 		{
-
 			if (midElement < target) 
 			{
 				startindex = midindex + 1;

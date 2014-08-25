@@ -118,220 +118,131 @@ public class BKnoop<E>
       rightChild = null;
     }
   }
-//************************************************************************************************ 
-  public String toString() {
-    return userObject.toString();
-  }
+
 //************************************************************************************************  
   public int aantalKnopen()
   {
-	  if(leftChild == null && rightChild ==null)
-	  { 
-		  return 1;  
-	  }
-	  if(leftChild != null && rightChild ==null)
-	  {
-		  
-		  return 1 + leftChild.aantalKnopen();
-		  
-	  }
-	  if(leftChild ==null && rightChild!= null)
-	  {
-		  return  1+ rightChild.aantalKnopen();
-	  }
-	  else
-		  return 1+ leftChild.aantalKnopen()+rightChild.aantalKnopen();
-	 
+      return 1 + (leftChild != null ? leftChild.aantalKnopen() : 0)
+              + (rightChild != null ? rightChild.aantalKnopen() : 0);
   }
+  
+  
+  
 //************************************************************************************************   
   public int aantalBlad()
   {
-	  if(leftChild!= null && rightChild !=null)
-	  {
-		  return leftChild.aantalBlad()+rightChild.aantalBlad();
-	  }
-	  else
-		  return 1;
-	  
+      return (leftChild != null ? leftChild.aantalBlad() + 1 : 0)
+              + (rightChild != null ? rightChild.aantalBlad() + 1 : 0);
   }
+
 //************************************************************************************************   
+
   public int diepte()
   {
-	  if(userObject== null)
-	  {
-		  return -1;
-	  }
-	  if(leftChild==null)
-	  {
-		  return 1+rightChild.diepte();
-	  }
-	  if(rightChild==null)
-	  {
-		  return 1+ leftChild.diepte();
-	  }
-
-	  return Math.max(1 + leftChild.diepte(), 1 + rightChild.diepte());
-	  
-	  
+      return diepte(0);
   }
 //************************************************************************************************  
   
-  public String preOrderString()
+  private int diepte(int diepte)
   {
-	  StringBuilder buffer = new StringBuilder();
-	  
-	  for (E node : preOrder())
-	  {
-		  buffer.append(node);
-		  buffer.append("");
-	  }
-	  return buffer.toString();
+      int diepteLeft = leftChild != null ? leftChild.diepte(diepte + 1) : 0;
+      int diepteRight = rightChild != null ? rightChild.diepte(diepte + 1)
+              : 0;
+
+      return Math.max(diepteLeft, diepteRight);
+  }
+//************************************************************************************************
+  
+  public String inorder()
+  {
+      String inorder = "";
+
+      if(this.getLeftChild() != null)
+          inorder += this.getLeftChild().inorder();
+
+
+      inorder += this.toString();
+
+      if(this.getRightChild() != null)
+          inorder += this.getRightChild().inorder();
+
+      return inorder;
   }
 //************************************************************************************************  
-  
-  public ArrayList<E> preOrder()
+  public String preorder()
   {
-	  ArrayList<E> list = new ArrayList<E>();
-	  preOrder(list);
-	  return list;
+      String preorder = this.toString();
+
+      if(this.getLeftChild() != null)
+          preorder += this.getLeftChild().preorder();
+
+      if(this.getRightChild() != null)
+          preorder += this.getRightChild().preorder();
+
+      return preorder;
+  }
+
+
+//************************************************************************************************
+  public String postorder()
+  {
+      String postorder = "";
+
+      if(this.getLeftChild() != null)
+          postorder += this.getLeftChild().postorder();
+
+      if(this.getRightChild() != null)
+          postorder += this.getRightChild().postorder();
+
+      postorder += this.toString();
+
+      return postorder;
   }
 //************************************************************************************************
-  
-  private ArrayList<E> preOrder(ArrayList<E> list)
-  {	  
-	  list.add(userObject);
-	  if(leftChild != null)
-	  {
-		  leftChild.preOrder(list);
-	  }
-	  if(rightChild!=null)
-	  {
-		  rightChild.preOrder(list);
-	  }
-	  return list;
-  }
+  public String levelorder()
+  {
+      ListQueue listqueue = new ListQueue();
+
+      BKnoop<E> temp = this;
+
+      String levelorder = "";
+
+      while(temp != null)
+      {
+          levelorder = levelorder + temp.toString();
+
+          if(temp.getLeftChild() != null)
+          {
+              listqueue.enqueue(temp.getLeftChild());
+          }
+
+          if(temp.getRightChild() != null)
+          {
+              listqueue.enqueue(temp.getRightChild());
+          }
+
+          if(listqueue.isEmpty())
+          {
+              temp = null;
+          }
+          else
+          {
+              temp = (BKnoop<E>) listqueue.dequeue();
+          }
+      }
+
+      return levelorder;
+  }	
+
 //************************************************************************************************
-  public String inOrderString()
-	{
-		StringBuilder buffer = new StringBuilder();
 
-		for (E node : inOrder())
-		{
-			buffer.append(node);
-			buffer.append(" ");
-		}
-
-		return buffer.toString();
-	}
 //************************************************************************************************
-	public ArrayList<E> inOrder()
-	{
-		ArrayList<E> list = new ArrayList<E>();
-		inOrder(list);
-		return list;
-	}
-//************************************************************************************************
-	private ArrayList<E> inOrder(ArrayList<E> list)
-	{
-		if(leftChild != null)
-		{
-			leftChild.inOrder(list);
-		}
 
-		list.add(userObject);
-
-		if(rightChild != null)
-		{
-			rightChild.inOrder(list);
-		}
-
-		return list;
-	}
 //************************************************************************************************
 	
-	public String postOrderString()
-	{
-		StringBuilder buffer = new StringBuilder();
-
-		for (E node : postOrder())
-		{
-			buffer.append(node);
-			buffer.append(" ");
-		}
-
-		return buffer.toString();
-	}
-//************************************************************************************************
-
-	public ArrayList<E> postOrder()
-	{
-		ArrayList<E> list = new ArrayList<E>();
-		postOrder(list);
-		return list;
-	}
-//************************************************************************************************
-	
-	private ArrayList<E> postOrder(ArrayList<E> list)
-	{
-		if(leftChild != null)
-		{
-			leftChild.postOrder();
-		}
-
-		if(rightChild != null)
-		{
-			rightChild.postOrder();
-		}
-		
-		list.add(userObject);
-
-		return list;
-	}
-//************************************************************************************************
-	
-	public String levelOrderString()
-	{
-		StringBuffer buffer = new StringBuffer();
-		
-		for (E node : levelOrder())
-		{
-			buffer.append(node);
-			buffer.append(" ");
-		}
-
-		return buffer.toString();
-	}
-//************************************************************************************************
-	public ArrayList<E> levelOrder()
-	{
-		Queue<BKnoop<E>> queue = new LinkedList<BKnoop<E>>();
-		queue.add(this);
-
-		ArrayList<E> list = new ArrayList<E>();
-		levelOrder(list, queue);
-		return list;
-	}
-//************************************************************************************************
-	private ArrayList<E> levelOrder(ArrayList<E> list, Queue<BKnoop<E>> queue)
-	{
-		while(!queue.isEmpty())
-		{
-			BKnoop<E> knoop = queue.remove();
-
-			list.add(knoop.get());
-
-			if(knoop.leftChild != null)
-			{
-				queue.add(knoop.leftChild);
-			}
-
-			if(knoop.rightChild != null)
-			{
-				queue.add(knoop.rightChild);
-			}
-		}
-
-		return list;
-	}
-//************************************************************************************************
+	 public String toString()
+	    {
+	        return userObject.toString();
+	    }
+//************************************************************************************************	 
 }
