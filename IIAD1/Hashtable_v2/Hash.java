@@ -1,4 +1,4 @@
-package Hashtable_v3;
+package Hashtable_v2;
 
 import java.util.Enumeration;
 import java.util.Hashtable;
