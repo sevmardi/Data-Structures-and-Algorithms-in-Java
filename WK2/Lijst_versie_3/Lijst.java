@@ -44,7 +44,7 @@ public class Lijst
   }
 //-------------------------------------------------------------------------------------------
   //Inserts a new node to the end of this list.
-  public void addlast(Object o)
+/*  public void addlast(Object o)
   {
 	  if (header ==null)
 		  addFirst(o);
@@ -60,20 +60,21 @@ public class Lijst
 		
 		  tmp.next = new  Node<Object>(o, null);
 	  }
-  }
+  }*/
 //-------------------------------------------------------------------------------------------
-  public Object getLast()
+/*  public Object getLast()
   {
 	  if (header ==null)
 	  {
-		  Node<AnyType> tmp = head;
+
+		  // has to be fixed -> Node<AnyType> tmp = head;
 	      while(tmp.next != null) tmp = tmp.next;
 
 	      return tmp.data;
 		  
 	  }
 	  
-  }
+  }*/
 //-------------------------------------------------------------------------------------------
   public Object removeLast()
   {

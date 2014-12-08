@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="tests"/>
-	<classpathentry kind="src" path="ReaderFiles"/>
 	<classpathentry kind="src" path="WK2"/>
 	<classpathentry kind="src" path="WK3"/>
 	<classpathentry kind="src" path="Wk6-7"/>
