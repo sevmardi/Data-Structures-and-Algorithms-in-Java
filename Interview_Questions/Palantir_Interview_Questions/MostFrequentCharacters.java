@@ -11,9 +11,12 @@ public class MostFrequentCharacters {
 	
 	public static void main(String[] args) throws IOException {
 		
+		System.out.println("the moest frequent letters are: ");
+		System.out.println("===================================================");
 		System.out.println(FrequentCharacters("these doors", 2));
 		System.out.println(FrequentCharacters("today is that saturday", 3));
 	}
+	
 	/**
 	* Returns a string that contains the most frequent characters in order as
 	* a string. The characters displayed have to be greater than the frequencyThreshold
