@@ -9,6 +9,7 @@
 	<classpathentry kind="src" path="Cracking_Code"/>
 	<classpathentry kind="src" path="Interview_Questions"/>
 	<classpathentry kind="src" path="DataStructre"/>
+	<classpathentry kind="src" path="DesignPattern"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
