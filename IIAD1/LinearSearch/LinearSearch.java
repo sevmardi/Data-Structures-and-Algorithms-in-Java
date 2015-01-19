@@ -5,6 +5,7 @@ public class LinearSearch {
 	private long[]a;			// ref to array a
 	private int nElems;			// number of data items
 	
+	//...........................................................................................................	
 	public LinearSearch(int max) 		// constructor
 	{
 		a =  new long[max];		// create the array. 
@@ -29,8 +30,7 @@ public class LinearSearch {
 		else
 		{
 			return true;	// no, found it! 
-		}
-		
+		}	
 	}
 	//..........................................................................................................
 	public void insert(long value)		// put element into array
@@ -50,7 +50,7 @@ public class LinearSearch {
 				break;
 			}
 		}
-		if(j ==nElems)			// can't find it
+		if(j == nElems)			// can't find it
 		{
 			return false;		//found it
 		}
@@ -63,7 +63,6 @@ public class LinearSearch {
 			nElems--; 
 			return false;
 		}
-		
 	}
 	//..........................................................................................................
 	public void display()	// display array contents

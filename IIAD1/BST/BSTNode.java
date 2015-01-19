@@ -10,12 +10,9 @@ public class BSTNode {
 	{
 		this.value = value;
 		left = null;
-		right = null;
-		
+		right = null;	
 	}
-	
 	// add value into tree
-	
 	public boolean add(int value)
 	{
 		if(value == this.value)
