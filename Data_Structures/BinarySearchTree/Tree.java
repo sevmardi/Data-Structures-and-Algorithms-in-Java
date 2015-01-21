@@ -102,13 +102,19 @@ public class Tree
 			   {
 				   parent.rightChild = null;
 			   }
-		   }
+		   }   
+		   // not finished yet
 		 
 		   return true;
-  
+		
 	   }
-	   
-	   
+// -------------------------------------------------------------		   
+	   public void display()             // displays array contents
+	      {
+	
+	    
+	      System.out.println("");
+	      }
 	   
 	   
 	   
