@@ -1,5 +1,7 @@
 package BinarySearchTree;
 
+
+
 public class Tree 
 {	
 	private Node root;             // first node of tree
@@ -109,14 +111,8 @@ public class Tree
 		
 	   }
 // -------------------------------------------------------------		   
-	   public void display()             // displays array contents
-	      {
-	
-	    
-	      System.out.println("");
-	      }
-	   
-	   
+
+	  
 	   
 	   
 	   

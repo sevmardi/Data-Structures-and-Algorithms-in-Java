@@ -21,7 +21,13 @@ public class TreeApp
 	      theTree.insert(93, 1.5);
 	      theTree.insert(97, 1.5);
 	      
-	      theTree.display();
+	      
+	      
+	      
+	      theTree.delete(37);
+	      theTree.delete(43);
+	      theTree.delete(30);
+	      
 	      
 }
 }
