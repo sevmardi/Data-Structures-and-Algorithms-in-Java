@@ -6,16 +6,22 @@ public class HashMap {
 	
 	HashEntry[] table;
 	
+	/**
+	 * 
+	 */
 	public HashMap() {
 		table = new HashEntry[Table_Size];
 		
 		for (int i=0;i<Table_Size;i++)
 		{
 			table[i] = null;
-		}
-		
-	}
-	
+		}		
+	}	
+	/**
+	 * 
+	 * @param key
+	 * @return
+	 */
 	public int get(int key)
 	{
 		int hash = (key % Table_Size);
@@ -24,11 +30,14 @@ public class HashMap {
 		if(table[hash] ==null)
 			return -1;
 		else
-			return table[hash].getValue(); 
-		
-		
+			return table[hash].getValue(); 	
 	}
 	
+	/**
+	 * 
+	 * @param key
+	 * @param value
+	 */
 	public void put(int key, int value)
 	{
 		int hash = (key % Table_Size);
