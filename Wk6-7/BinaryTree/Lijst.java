@@ -104,7 +104,7 @@ public class Lijst {
 	  private class LItr implements Iterator
 	  {
 	    private Entry pos = header;
-
+	    
 	    public boolean hasNext() 
 	    {
 	      return pos.next != header;
