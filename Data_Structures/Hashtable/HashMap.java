@@ -23,9 +23,11 @@ public class HashMap {
 	public int get(int key)
 	{
 		int hash = (key % Table_Size);
+		
 		while(table[hash] != null && table[hash].getKey() != key)
 			hash= (hash +1 ) % Table_Size;
-		if(table[hash] ==null)
+		
+		if(table[hash] == null)
 			return -1;
 		else
 			return table[hash].getValue(); 	
@@ -39,13 +41,12 @@ public class HashMap {
 	public void put(int key, int value)
 	{
 		int hash = (key % Table_Size);
+		
 		while(table[hash] != null && table[hash].getKey() != key)
 			hash = (hash+1) % Table_Size;
+		
 		table[hash] = new HashEntry(value, key);
 	}
 	
-	public void searchLinear()
-	{
-		
-	}
+
 }
