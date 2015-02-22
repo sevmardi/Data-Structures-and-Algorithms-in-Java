@@ -3,9 +3,9 @@ package Graph;
 public class Graph {
 	private final int MAX_VERTS = 20;
 	private Vertex vertexList[]; // list of vertices
-	private int adjMat[][]; // adjancency matrix
+	private int adjMat[][]; 	// adjancency matrix
 	private int nVerts;
-	private Stackx theStack;
+	private Stackx theStack; // object class
 
 	// --------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -56,7 +56,8 @@ public class Graph {
 	/**
 	 * depth-first search function to search through vertex
 	 */
-	public void depthFirstSearch() {
+	public void depthFirstSearch() 
+	{
 		vertexList[0].wasVisited = true;
 		displayVertex(0); // display it
 		theStack.push(0); // push it
