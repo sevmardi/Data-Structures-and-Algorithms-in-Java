@@ -53,9 +53,8 @@ private void recMergeSort(long[] workSpace, int lowerBound,
       }  // end else
    }  // end recMergeSort()
 //-----------------------------------------------------------
-private void merge(long[] workSpace, int lowPtr,
-                        int highPtr, int upperBound)
-   {
+private void merge(long[] workSpace, int lowPtr, int highPtr, int upperBound)
+{
    int j = 0;                             // workspace index
    int lowerBound = lowPtr;
    int mid = highPtr-1;
