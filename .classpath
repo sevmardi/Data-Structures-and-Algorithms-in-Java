@@ -5,7 +5,6 @@
 	<classpathentry kind="src" path="Interview_Questions"/>
 	<classpathentry kind="src" path="Data_Structures"/>
 	<classpathentry kind="src" path="DesignPattern"/>
-	<classpathentry kind="src" path="QuickSort"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

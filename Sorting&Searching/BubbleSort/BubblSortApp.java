@@ -4,7 +4,7 @@ public class BubblSortApp
 {
 	 public static void main(String[] args)
      {
-     int maxSize = 100;            // array size
+     int maxSize = 10;            // array size
      BubblSort arr;                 // reference to array
      arr = new BubblSort(maxSize);  // create the array
 
@@ -24,5 +24,8 @@ public class BubblSortApp
      arr.bubbleSort();             // bubble sort them
 
      arr.display();                // display them again
-     }  // end main()
+     
+     ///// 
+     }
+	 // end main()
 }
