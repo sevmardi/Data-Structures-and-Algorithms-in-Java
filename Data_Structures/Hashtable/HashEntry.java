@@ -10,14 +10,17 @@ public class HashEntry {
 		this.value = value;
 		this.key = key;
 	}
+	// Returns the value to which the specified key is mapped in this hashtable. 
 	public int getKey()
 	{
 		return key;
 	}
+	
 	public int getValue()
 	{
 		return value;
 	}
+	
 	
 	
 }
