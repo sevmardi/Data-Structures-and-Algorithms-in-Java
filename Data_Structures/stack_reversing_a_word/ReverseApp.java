@@ -32,7 +32,6 @@ public class ReverseApp {
 		BufferedReader bfr = new BufferedReader(isr);
 		String b = bfr.readLine();
 		return b;
-
 	}
 
 }
