@@ -60,15 +60,19 @@ public class LinkList {
 			if (current.next == null) {
 				return null;
 			}
-
 			else
 				current = current.next; // set the currnet to next;
-
 		}
 		return current; // found it
 	}
 
-	public Link deleteKey(int key) {
+	/**
+	 * Delete a link by given key (assumes non-empty list)
+	 * @param key
+	 * @return
+	 */
+	public Link deleteKey(int key) 
+	{
 		Link current = first;
 		Link previous = first;
 
