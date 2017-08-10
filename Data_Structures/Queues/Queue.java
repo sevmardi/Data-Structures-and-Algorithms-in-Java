@@ -41,7 +41,7 @@ public class Queue {
 			front = 0; // if so, deal with it.
 		}
 		nItems--;
-		
+
 		return temp;
 	}
 
@@ -65,6 +65,7 @@ public class Queue {
 
 	/**
 	 * Check if queue is full
+	 * 
 	 * @return
 	 */
 	public boolean isFull() {
@@ -73,11 +74,11 @@ public class Queue {
 
 	/**
 	 * Number of items in the queue
+	 * 
 	 * @return nItems
 	 */
-	public int size()
-	{
+	public int size() {
 		return nItems;
 	}
-	
+
 }
